@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _pantallas = const [
     TransferScreen(),
-    DepositScreen(),
+    DepositoScreen(),
   ];
 
   @override
