@@ -49,8 +49,8 @@ void login(String correo, String contrasenia, BuildContext context) async {
   try {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: correo, password: contrasenia);
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text("Bienvenido")));
+   // ScaffoldMessenger.of(context)
+        //.showSnackBar(SnackBar(content: Text("Bienvenido")));
     Navigator.pushReplacement(
   context,
   MaterialPageRoute(builder: (context) => const HomeScreen()),

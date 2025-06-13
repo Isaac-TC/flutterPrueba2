@@ -19,6 +19,7 @@ class supaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       home:  Cuerpo()
       
     );
@@ -31,7 +32,8 @@ class Cuerpo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Banco App")),
+      appBar: AppBar(title: Text("Banco App"),
+      actions:[IconButton(onPressed: ()=>mensajesCreditos(context), icon: Icon(Icons.text_snippet))]),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -65,4 +67,31 @@ Widget btnRegistro(BuildContext context) {
     child: const Text("Ir a Registro"),
   );
 }
+
+void mensajesCreditos(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text("Información del Desarrollador"),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Text("Nombre: Isaac Tonato"),
+          SizedBox(height: 4),
+          Text("Usuario: @Isaac-TC"),
+          SizedBox(height: 4),
+       
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text("Cerrar"),
+        )
+      ],
+    ),
+  );
+}
+
 
